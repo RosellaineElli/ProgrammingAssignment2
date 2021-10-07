@@ -9,7 +9,6 @@ makeCacheMatrix <- function(x = matrix())
              x<<-y
              inv<< NULL
       }
-      
       get<-function (x)            #Function used to get matrix x
       setInverse<-function(inv){inv <<- inv}
       getInverse<-function () {inv}    
@@ -20,9 +19,7 @@ makeCacheMatrix <- function(x = matrix())
            getInverse = getInverse)
       }
 
-
 ## Using this we can get the cache data
-
 cacheSolve<-function(x,...)          ##Getting cache data
       { 
       inv<-x$getInverse()
