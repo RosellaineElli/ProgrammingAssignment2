@@ -21,7 +21,7 @@ makeCacheMatrix<-function(x = matrix())
 ## Using this we can get the cache data
 cacheSolve<-function(x,...)          ##Getting cache data
       { 
-      inv<-x$getInverse()
+      inv<-x$getInv()
       if(!is.null)(inv)
       {                                 #Checking if inverse is Null
           message("preparing the cached data")
@@ -29,7 +29,7 @@ cacheSolve<-function(x,...)          ##Getting cache data
       }
       mat<-x$get()
       inv<-solve(mat,...)              #Computing inverse value
-      x$setInverse(inv)
+      x$setInv(inverse)
       inv
         ## Returning the matrix that is inverse of 'x'
 }
