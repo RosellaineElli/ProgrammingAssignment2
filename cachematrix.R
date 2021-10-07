@@ -1,7 +1,7 @@
 ## Function can be used such as makeCacheMatrix
 ## The makeCacheMatrix is composed of the following set, get, setInv, getInv
 
-makeCacheMatrix <- function(x = matrix()) 
+makeCacheMatrix<-function(x = matrix()) 
 {
       inv<-NULL                        # Preparing inverse as NULL
       set<-function(y)
@@ -12,11 +12,10 @@ makeCacheMatrix <- function(x = matrix())
       get<-function (x)            #Function used to get matrix x
       setInverse<-function(inv){inv <<- inv}
       getInverse<-function () {inv}    
-      list( set = set,
+      list(set = set,
            get = get, 
-           setInverse = 
-           setInverse, 
-           getInverse = getInverse)
+           setInv = setInv, 
+           getInv = getInv)
       }
 
 ## Using this we can get the cache data
@@ -25,7 +24,7 @@ cacheSolve<-function(x,...)          ##Getting cache data
       inv<-x$getInverse()
       if(!is.null)(inv)
       {                                 #Checking if inverse is Null
-          message("preparing cached data")
+          message("preparing the cached data")
           return(inv)                   #Returns the inverse value
       }
       mat<-x$get()
