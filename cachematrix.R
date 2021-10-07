@@ -1,5 +1,5 @@
-## A two functions can be used makeCacheMatrix, makeCacheMatrix
-## The makeCacheMatrix is composed of set, get, setInv, getInv
+## Function can be used such as makeCacheMatrix
+## The makeCacheMatrix is composed of the following set, get, setInv, getInv
 
 makeCacheMatrix <- function(x = matrix()) 
 {
