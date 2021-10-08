@@ -1,35 +1,30 @@
-## Function can be used such as makeCacheMatrix
-## The makeCacheMatrix is composed of the following set, get, setInv, getInv
 
 makeCacheMatrix<-function(x = matrix()) 
 {
-      inv<-NULL                        # Preparing inverse as NULL
+      inv<-NULL                        
       set<-function(y)
       {
              x<<-y
              inv<< NULL
       }
-      get<-function (x)            #Function used to get matrix x
-      setInverse<-function(inv){inv <<- inv}
-      getInverse<-function () {inv}    
-      list(set = set,
-           get = get, 
-           setInv = setInv, 
-           getInv = getInv)
+      get <-function (x)            
+      setInverse <-function(inv){inv <<- inv}
+      getInverse <-function () (inverse)    
+      list(set = set, get = get,               # The makeCacheMatrix is composed of the following set, get, setInv, getInv
+           setInv = setInv, getInv = getInv)
       }
 
-## Using this we can get the cache data
-cacheSolve<-function(x,...)          ##Getting cache data
+cacheSolve<-function(x,...)                    # Returning the matrix that is inverse of 'x'
       { 
       inv<-x$getInv()
       if(!is.null)(inv)
-      {                                 #Checking if inverse is Null
+      {                                 
           message("preparing the cached data")
-          return(inv)                   #Returns the inverse value
+          return(inv)                  
       }
-      mat<-x$get()
-      inv<-solve(mat,...)              #Computing inverse value
+      
+      data <- x$get()
+      inv < -solve(data, ...)                   #Computing for the inverse value
       x$setInv(inverse)
       inv
-        ## Returning the matrix that is inverse of 'x'
 }
